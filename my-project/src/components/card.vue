@@ -1,38 +1,32 @@
 <template>
-  <el-table :data="tableData" style="width: 100%">
-    <el-table-column prop="date" label="日期" width="180"></el-table-column>
-    <el-table-column prop="name" label="姓名" width="180"></el-table-column>
-    <el-table-column prop="address" label="地址"></el-table-column>
-  </el-table>
+  <div>
+    <button @click="add(2)">数量++</button>
+    <div>{{ num }}</div>
+    <button @click="pop(2)">数量--</button>
+  </div>
 </template>
 
-  <script>
+<script>
+import { mapState, mapActions } from 'vuex'
 export default {
   data() {
     return {
-      tableData: [
-        {
-          date: "2016-05-02",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          arr: "2016-05-04",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1517 弄"
-        },
-        {
-          ccc: "2016-05-01",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1519 弄"
-        },
-        {
-          date: "2016-05-03",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1516 弄"
-        }
-      ]
-    };
+      add: 1
+    }
+  },
+  // $route
+  compontent: {},
+  computed: {
+    ...mapState('first', {
+      num: state => state.num
+    })
+  },
+  methods: {
+    ...mapActions('first', ['add', 'pop'])
+    // ...mapActions(["add", "pop"]) // 没有模块的写法
   }
-};
+}
 </script>
+
+<style scoped>
+</style>

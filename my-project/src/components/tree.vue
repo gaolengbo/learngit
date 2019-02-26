@@ -1,30 +1,30 @@
 <template>
-  <div>
-    <button @click="add(2)">数量++</button>
-    <div>{{num}}</div>
-    <button @click="pop(2)">数量--</button>
+  <div class="box">
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
   </div>
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
 export default {
   data() {
-    return {};
-  },
-  // $route
-  compontent: {},
-  computed: {
-    ...mapState("first", {
-      num: state => state.num
-    })
-  },
-  methods: {
-    ...mapActions("first", ["add", "pop"])
-    // ...mapActions(["add", "pop"]) // 没有模块的写法
+    return {}
   }
-};
+}
 </script>
-
-<style scoped>
+<style lang="scss" scoped>
+.box {
+  display: flex;
+  justify-content: space-between;
+  span {
+    flex: 0 0 285px;
+    height: 500px;
+    background: skyblue;
+    margin: 0 20px;
+  }
+  span:nth-child(2) {
+    flex: 1;
+  }
+}
 </style>
