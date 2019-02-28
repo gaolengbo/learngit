@@ -8,21 +8,22 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
+const STORE = 'first'
 export default {
   data() {
-    return {
-      add: 1
-    }
+    return {}
   },
   // $route
   compontent: {},
   computed: {
-    ...mapState('first', {
-      num: state => state.num
-    })
+    //  {
+    //   num: 'num'
+    //   // num: state => state.num
+    // }
+    ...mapState(STORE, ['num'])
   },
   methods: {
-    ...mapActions('first', ['add', 'pop'])
+    ...mapActions(STORE, ['add', 'pop'])
     // ...mapActions(["add", "pop"]) // 没有模块的写法
   }
 }
