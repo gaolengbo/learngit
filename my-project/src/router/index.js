@@ -19,6 +19,11 @@ export default new VueRouter({
       path: '/vuex',
       name: 'xx',
       component: resolve => require(['@/components/vuex-demo'], resolve)
+    },
+    {
+      path: '/ele',
+      name: 'ele',
+      component: resolve => require(['@/components/element'], resolve)
     }
   ]
 })
