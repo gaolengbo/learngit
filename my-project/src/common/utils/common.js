@@ -1,18 +1,8 @@
 import axios from "axios";
 
-// 设置请求头
-const AXIOS = axios.create({
-  header: {
-    Accept: "*/*",
-    "Access-Control-Allow-Origin": "*", // 让服务器能够接收到来自所有域的请求
-    withCredentials: true, // 允许携带cookie
-    "Cache-Control": "no-cache", // 缓存控制：不缓存
-    Pragma: "no-cache" // 编译指示
-  }
-});
+
 // 数据字典
 const sysRegisty = require("../registry/sysRegistry.js");
-
 let commonUtils = {
   axiosData: function (url, method, params, baseURL, ...configHead) {
     let config = {
@@ -69,4 +59,4 @@ let commonUtils = {
     return urlQuery;
   }
 }
-export default commonUtils;
+export default AXIOS;

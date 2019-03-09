@@ -8,21 +8,19 @@ Vue.use(VueRouter)
 export default new VueRouter({
   mode: 'history', // 去掉#号，为了好看
   routes: [{
-      path: '/mine',
+      path: '/flex',
       component: resolve => require(['@/components/layout.vue'], resolve) // 懒加载
     },
     {
       path: '*', // 重定向
-      redirect: '/mine'
+      redirect: '/flex'
     },
     {
       path: '/vuex',
-      name: 'xx',
       component: resolve => require(['@/components/vuex-demo'], resolve)
     },
     {
-      path: '/ele',
-      name: 'ele',
+      path: '/es6',
       component: resolve => require(['@/components/element'], resolve)
     }
   ]

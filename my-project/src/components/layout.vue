@@ -21,7 +21,9 @@ export default {
       // this.$router.push({
       //   path: 'vuex'
       // })
-      this.$router.push('vuex')
+      // this.$router.push('vuex')
+      console.log('----router---', this.$router)
+      console.log('----route---', this.$route)
     },
     init() {
       return {
