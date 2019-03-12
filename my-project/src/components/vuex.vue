@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="add()">数量++</button>
+    <button @click="getData">数量++</button>
     <div>{{ num }}</div>
     <div>{{ form.name }}</div>
     <button @click="pop(2)">数量--</button>
@@ -9,6 +9,7 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
+import Bus from './bus'
 const STORE = 'first'
 export default {
   data() {
@@ -21,7 +22,7 @@ export default {
       ]
     }
   },
-  // add()  delete()
+  // add()  delete()  filter()
   compontent: {},
   computed: {
     //  {
@@ -33,7 +34,11 @@ export default {
   },
   methods: {
     // ...mapActions(["add", "pop"]) // 没有模块的写法
-    ...mapActions(STORE, ['add', 'pop']) // 有模块的写法
+    // 有模块的写法
+    ...mapActions(STORE, ['add', 'pop']),
+    getData() {
+      Bus.$emit('update', 180) // Bus事件总线传递数据
+    }
   }
 }
 </script>

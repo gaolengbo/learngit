@@ -8,11 +8,11 @@ import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 
 new Vue({
-    el: '#app',
-    router: router, //4.注册路由对象
-    components: {
-        App //App:App 
-    },
-    store,
-    template: '<App/>'
+  el: '#app',
+  router: router, //4.注册路由对象
+  components: {
+    App //App:App 
+  },
+  store,
+  template: '<App/>'
 })

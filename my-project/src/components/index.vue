@@ -23,6 +23,10 @@ export default {
         {
           name: 'es6',
           path: '/es6'
+        },
+        {
+          name: 'img',
+          path: '/img'
         }
       ]
     }
@@ -40,8 +44,8 @@ export default {
   flex-direction: column;
   div {
     flex: 1;
-    width: 50px;
     border: 1px solid skyblue;
+    cursor: pointer;
   }
 }
 </style>

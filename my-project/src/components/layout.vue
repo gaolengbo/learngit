@@ -37,15 +37,20 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.list {
+  background: #ccc;
+}
 .box {
   display: flex;
-  min-height: 100vh;
+  width: 95%;
+  height: 100vh;
   flex-direction: column; // 纵向
   footer,
   header {
     flex: 1;
     border: 1px solid black;
     box-shadow: #ccc;
+    @extend .list; // scss样式复用   &:hover 引用父级选择器
   }
   .wrap {
     display: flex;

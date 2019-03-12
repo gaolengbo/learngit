@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <index></index>
+    <div class="nav">
+      <index></index>
+    </div>
     <router-view />
   </div>
 </template>
@@ -15,6 +17,10 @@ export default {
 #app {
   text-align: center;
   color: #2c3e50;
+  display: flex;
+  .nav {
+    flex: 0 0 50px;
+  }
 }
 </style>
 

@@ -17,11 +17,15 @@ export default new VueRouter({
     },
     {
       path: '/vuex',
-      component: resolve => require(['@/components/vuex-demo'], resolve)
+      component: resolve => require(['@/components/vuex'], resolve)
     },
     {
       path: '/es6',
-      component: resolve => require(['@/components/element'], resolve)
+      component: resolve => require(['@/components/es6'], resolve)
+    },
+    {
+      path: '/img',
+      component: resolve => require(['@/components/img'], resolve)
     }
   ]
 })
