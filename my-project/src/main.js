@@ -4,7 +4,7 @@ import router from './router' //等效于　import router from './router/index.j
 import store from './store';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-// import "@/assets/font/iconfont.css";
+import "@/assets/font/iconfont.css";
 Vue.use(ElementUI);
 
 new Vue({

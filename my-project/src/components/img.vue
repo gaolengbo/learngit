@@ -1,62 +1,37 @@
 <template>
   <div>
-    <div class="box">
-      <transition name="fade">
-        <img :src="signImages" alt="" @click="magnify" />
-      </transition>
-    </div>
+    <div id="main" style="width: 600px;height:400px;"></div>
   </div>
 </template>
 
 <script>
+const echarts = require('echarts')
+require('echarts/lib/chart/bar')
+// 引入提示框和标题组件
+require('echarts/lib/component/tooltip')
+require('echarts/lib/component/title')
 export default {
   data() {
-    return {
-      signImages: require('./1_Kxd1M1OfpoCJS6iNqTKTgw.png'),
-      show: false
-    }
+    return {}
+  },
+  mounted() {
+    this.drawGraph()
   },
   methods: {
-    magnify() {
-      let img = document.getElementsByTagName('img')[0]
-      img.style.position = 'absolute'
-      // let start = img.getBoundingClientRect() // 获取图片的坐标和图片大小
-      //图片高度大于屏幕
-
-      if (img.naturalHeight > window.innerHeight) {
-        img.height = window.innerHeight
-        console.log('img', img.height)
-      }
-      //图片宽度大于屏幕
-      // if (img.naturalWidth > window.innerWidth) {
-      //   img.width = window.innerWidth
-      // }
-      if (this.show === false) {
-        img.style.transition = 'all 500ms ease-in-out'
-        let translate = `translate(${(window.innerWidth - img.naturalWidth) /
-          2}px,${(window.innerHeight - img.naturalHeight) / 2}px)`
-        let scale = `scale(${img.naturalWidth /
-          img.width}, ${img.naturalHeight / img.height})`
-        img.style.transform = `${translate} ${scale}`
-        console.log('---', img.style.transform)
-        this.show = true
-      } else {
-        let translate = `translate(${0}px,${0}px)`
-        let scale = `scale(1)`
-        img.style.transform = `${translate} ${scale}`
-        this.show = false
-      }
+    drawGraph() {
+      let myChart = echarts.init(document.getElementById('main'))
+      var XData = ['甘肃', '青海', '内蒙古', '重庆']
+      var yData = [20, 30, 50, 40]
+      let option = {}
+      myChart.setOption(option)
+      // color: function (params){ // 柱状图多种颜色
+      // let list =['#ccc','#eee','#fff']
+      // return list[params.dataIndex];
     }
   }
 }
 </script>
-<style lang="scss" scoped>
-.box {
-  position: relative;
-  img {
-    z-index: 200;
-    width: 200px;
-    height: 200px;
-  }
-}
+
+<style scoped>
 </style>
+ 

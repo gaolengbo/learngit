@@ -22,6 +22,11 @@ export default {
       //   path: 'vuex'
       // })
       // this.$router.push('vuex')
+      // array.forEach((v,i)) => {
+      //   if( this.menuList.indexOf()>=0){
+      //     array[i].id=true;
+      //   }
+      // });
       console.log('----router---', this.$router)
       console.log('----route---', this.$route)
     },

@@ -15,7 +15,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 #app {
-  text-align: center;
+  // text-align: center;
+  width: 100%;
+  height: 700px;
   color: #2c3e50;
   display: flex;
   .nav {
