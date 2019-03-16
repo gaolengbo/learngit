@@ -4,26 +4,26 @@ const state = {
   form: {
     name: '222',
     id: '',
-    age: ''
-  }
-}
+    age: '',
+  },
+};
 
 const actions = {
   add({
-    commit
+    commit,
   }, num) {
-    commit("ADD", num);
+    commit('ADD', num);
   },
   pop({
-    commit
+    commit,
   }, num) {
-    commit('POP', num)
-  }
-}
+    commit('POP', num);
+  },
+};
 
 export default {
   state,
   actions,
   mutations,
-  namespaced: true //用于在全局引用此文里的方法时标识这一个的文件名
-}
+  namespaced: true, // 用于在全局引用此文里的方法时标识这一个的文件名
+};

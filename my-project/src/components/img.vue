@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div id="main" style="width: 600px;height:400px;"></div>
+    <div id="main"
+         style="width: 600px;height:400px;"></div>
   </div>
 </template>
 
@@ -11,14 +12,14 @@ require('echarts/lib/chart/bar')
 require('echarts/lib/component/tooltip')
 require('echarts/lib/component/title')
 export default {
-  data() {
+  data () {
     return {}
   },
-  mounted() {
+  mounted () {
     this.drawGraph()
   },
   methods: {
-    drawGraph() {
+    drawGraph () {
       let myChart = echarts.init(document.getElementById('main'))
       var XData = ['甘肃', '青海', '内蒙古', '重庆']
       var yData = [20, 30, 50, 40]
