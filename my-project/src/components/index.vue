@@ -1,6 +1,8 @@
 <template>
   <div class="home-page">
-    <div v-for="item in routeData" :key="item.id" @click="add(item.path)">
+    <div v-for="item in routeData"
+         :key="item.id"
+         @click="add(item.path)">
       {{ item.name }}
     </div>
   </div>
@@ -9,7 +11,7 @@
 <script>
 export default {
   name: 'home-page',
-  data() {
+  data () {
     return {
       routeData: [
         {
@@ -32,11 +34,20 @@ export default {
     }
   },
   methods: {
-    add(path) {
+    add (path) {
       this.$router.push(path)
     }
   }
 }
+   // this.$router.push({
+      //   path: 'vuex'
+      // })
+      // this.$router.push('vuex')
+      // array.forEach((v,i)) => {
+      //   if( this.menuList.indexOf()>=0){
+      //     array[i].id=true;
+      //   }
+      // });
 </script>
 <style lang="scss" scoped>
 .home-page {
@@ -46,6 +57,7 @@ export default {
     flex: 1;
     border: 1px solid skyblue;
     cursor: pointer;
+    //  @extend .list; // scss样式复用   &:hover 引用父级选择器
   }
 }
 </style>
